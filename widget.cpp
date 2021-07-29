@@ -1,6 +1,6 @@
 #include "widget.h"
 #include "ui_widget.h"
-#include "dialog.h"
+//#include "dialog.h"
 #include <QMessageBox>
 #include <QDebug>
 
@@ -38,9 +38,16 @@ void Widget::on_pushButton_3_clicked()
     }
     }
 
-void Widget::on_pushButton_4_clicked()
-{
-    Dialog window;
+/*void Widget::on_pushButton_4_clicked()
+{//
+   Dialog window;
     window.setModal(true);
     window.exec();
+    //
+
+    hide(); // скрыть предыдущее окно после открытия
+    window = new Dialog(this);
+    window->show();
 }
+*/
+

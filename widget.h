@@ -2,6 +2,7 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include "dialog.h"
 
 namespace Ui {
 class Widget;
@@ -17,6 +18,8 @@ public:
 
 private:
     Ui::Widget *ui;
+    Dialog *window;
+
 public slots:
     void showText();
 private slots:
