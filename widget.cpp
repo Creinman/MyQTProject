@@ -1,5 +1,7 @@
 #include "widget.h"
 #include "ui_widget.h"
+#include <QMessageBox>
+#include <QDebug>
 
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
@@ -19,3 +21,18 @@ void Widget::showText()
 {
     ui->pushButton->setText("Hello");
 }
+
+void Widget::on_pushButton_pressed()
+{
+    ui->pushButton->setText("Pressed!");
+}
+
+void Widget::on_pushButton_3_clicked()
+{
+    QMessageBox::StandardButton reply = QMessageBox::question(this, "ЗАкрытие Окна", "Закрыть окно?", QMessageBox:: Yes | QMessageBox::No);
+    if (reply == QMessageBox::Yes) {
+        QApplication::quit();
+    } else {
+        qDebug() << "Button NO was Pushed";
+    }
+    }
